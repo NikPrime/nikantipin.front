@@ -40,5 +40,6 @@ jobs:
             key: ${{ secrets.key }}
             script: |
                 cd /var/www/html
-                ./init.sh    
+                docker-compose down
+                docker-compose up -d
             
