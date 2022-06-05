@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  push_to_registry:
+  push_to_registry_and_deploy:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -31,3 +31,14 @@ jobs:
             push: true
             tags: ${{ steps.meta.outputs.tags }}
             labels: ${{ steps.meta.outputs.labels }}
+
+        - name: Deploy Stack
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.VPS_SSH_HOST }}
+            username: ${{ secrets.VPS_SSH_USERNAME }}
+            key: ${{ secrets.key }}
+            script: |
+                cd /var/www/html
+                ./init.sh    
+            
