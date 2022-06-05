@@ -2,7 +2,7 @@ FROM node:14-alpine3.10
 
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE 8080
 
 COPY package*.json ./
 
