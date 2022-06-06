@@ -42,6 +42,6 @@ jobs:
                 cd /root/frontend
                 docker stop frontend || true
                 docker container rm frontend || true
-                docker image rm nikprime/nikantipin.front:master || true
+                docker image rm -f nikprime/nikantipin.front:master || true
                 docker-compose up -d
             
