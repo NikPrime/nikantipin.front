@@ -40,7 +40,7 @@ jobs:
             key: ${{ secrets.key }}
             script: |
                 cd /root/frontend
-                docker-compose down
+                docker container stop frontend
                 docker image rm frontend
                 docker-compose up -d
             
