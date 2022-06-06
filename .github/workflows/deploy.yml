@@ -39,7 +39,8 @@ jobs:
             username: ${{ secrets.VPS_SSH_USERNAME }}
             key: ${{ secrets.key }}
             script: |
-                cd /root
+                cd /root/frontend
                 docker-compose down
+                docker image rm frontend
                 docker-compose up -d
             
