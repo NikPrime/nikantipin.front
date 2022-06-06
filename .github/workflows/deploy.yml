@@ -40,8 +40,8 @@ jobs:
             key: ${{ secrets.key }}
             script: |
                 cd /root/frontend
-                docker stop frontend || true
-                docker container rm frontend || true
-                docker image rm -f nikprime/nikantipin.front:master || true
+                docker stop ${{ secrets.CONTAINER_NAME }} || true
+                docker container rm ${{ secrets.CONTAINER_NAME }} || true
+                docker image rm -f ${{ secrets.IMAGE_NAME }} || true
                 docker-compose up -d
             
