@@ -39,7 +39,7 @@ jobs:
             username: ${{ secrets.VPS_SSH_USERNAME }}
             key: ${{ secrets.key }}
             script: |
-                cd /var/www/html
+                cd /root
                 docker-compose down
                 docker-compose up -d
             
