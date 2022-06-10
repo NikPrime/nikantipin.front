@@ -6,28 +6,27 @@
         <span>Главная</span>
       </a>
     </li>
-
+    |
     <li>
       <a href="https://nikantipin.site/blog">
         <span>Блог</span>
         <span>Блог</span>
       </a>
     </li>
-
+    |
     <li>
       <a href="https://nikantipin.site/tech">
-        <span>Про технологии</span>
-        <span>Про технологии</span>
+        <span>Технологии</span>
+        <span>Технологии</span>
       </a>
     </li>
-
+    |
     <li>
       <a href="https://nikantipin.site/about">
         <span>О проекте</span>
         <span>О проекте</span>
       </a>
     </li>
-
   </ul>
 </template>
 
@@ -62,7 +61,7 @@ ul li {
 
 ul li a {
   display: block;
-  font-weight: 600;
+  font-weight: 400;
   height: 20px;
   overflow: hidden;
   position: relative;
