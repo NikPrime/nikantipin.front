@@ -20,13 +20,6 @@
         <span>Технологии</span>
       </a>
     </li>
-    |
-    <li>
-      <a href="https://nikantipin.site/about">
-        <span>О проекте</span>
-        <span>О проекте</span>
-      </a>
-    </li>
   </ul>
 </template>
 
@@ -51,6 +44,7 @@ html {
 ul {
   display: flex;
   margin: 0 40px;
+  width: 400px;
 }
 
 ul li {

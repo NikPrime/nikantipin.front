@@ -1,16 +1,21 @@
 <template>
-  <Navbar />
+  <Navbar/>
+  <CardStackInfo/>
+  <CardContactsInfo/>
 </template>
 
 <script>
 
 import Navbar from "./components/Navbar";
+import CardStackInfo from "./components/CardStackInfo";
+import CardContactsInfo from "./components/CardContactsInfo";
 
 export default {
   name: 'App',
   components: {
-
-    Navbar
+    Navbar,
+    CardStackInfo,
+    CardContactsInfo
   }
 }
 </script>
