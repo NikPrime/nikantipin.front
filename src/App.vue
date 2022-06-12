@@ -3,12 +3,13 @@
   <h3>Приветствую! Меня зовут <a class="nameURL" href="https://t.me/nikprimez">Никита Антипин</a>. Я Backend
     Node.js-developer, и я открыт к сотрудничеству.</h3>
   <div class="firstCardsRow">
-    <img src="./assets/avatar.png" style=" width: 200px; height: 200px; padding-left: 100px; padding-right: 100px;">
+    <CardContactsInfo/>
+    <img src="./assets/avatar.png" style=" width: 200px; height: 200px;">
+    <hr>
     <CardStackInfo/>
     <hr>
     <CardWorkPlacesInfo/>
   </div>
-  <CardContactsInfo/>
 </template>
 
 <script>
@@ -33,6 +34,9 @@ export default {
 * {
   background: #282828;
 }
+body {
+  min-width: 1514px;
+}
 h3 {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -42,7 +46,7 @@ h3 {
 hr {
   border: 1px solid #949494;
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

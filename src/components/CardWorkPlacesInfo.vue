@@ -44,12 +44,13 @@ export default {
   table-layout: fixed;
 }
 .placeOfWorkLi {
-  width: 300px;
+  width: 250px;
   display: table-cell;
 }
 .cardWorkPlacesInfo {
   color: #afafaf;
   font-family: "Bookman Old Style";
   border: white;
+  width: 410px;
 }
 </style>
