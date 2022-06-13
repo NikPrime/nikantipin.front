@@ -11,4 +11,4 @@ RUN npm install @vue/cli@3.7.0
 
 COPY . .
 
-RUN npm run build
+CMD ["npm", "run", "start:prod"]
