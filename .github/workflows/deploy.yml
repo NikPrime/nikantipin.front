@@ -22,7 +22,7 @@ jobs:
           id: meta
           uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
           with:
-              images: nikprime/nikantipin.front
+              images: ${{ secrets.IMAGE_NAME }}
 
         - name: Build and push Docker image
           uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -43,5 +43,5 @@ jobs:
                 docker stop ${{ secrets.CONTAINER_NAME }} || true
                 docker container rm ${{ secrets.CONTAINER_NAME }} || true
                 docker image rm -f ${{ secrets.IMAGE_NAME }} || true
-                docker-compose up -d
+                docker run ${{ secrets.IMAGE_NAME }}
             
