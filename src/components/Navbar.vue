@@ -6,18 +6,25 @@
         <span>Главная</span>
       </a>
     </li>
-    |
+    <hr>
     <li>
       <a href="https://nikantipin.site/blog">
         <span>Блог</span>
         <span>Блог</span>
       </a>
     </li>
-    |
+    <hr>
     <li>
       <a href="https://nikantipin.site/tech">
         <span>Технологии</span>
         <span>Технологии</span>
+      </a>
+    </li>
+    <hr>
+    <li>
+      <a href="https://nikantipin.site/algorithms">
+        <span>Алгоритмы</span>
+        <span>Алгоритмы</span>
       </a>
     </li>
   </ul>
@@ -30,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+hr {
+  border: 1px solid #37526e;
+}
 
 * {
   box-sizing: border-box;

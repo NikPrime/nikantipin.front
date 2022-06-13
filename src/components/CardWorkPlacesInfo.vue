@@ -1,5 +1,6 @@
 <template>
   <div class="cardWorkPlacesInfo">
+    <i><b>Job experience:</b></i>
     <ul class="placeOfWorkUl">
       <li class="placeOfWorkLi" style="width: 150px">2019 — 2021:</li>
       <li class="placeOfWorkLi">
@@ -47,10 +48,22 @@ export default {
   width: 250px;
   display: table-cell;
 }
+
 .cardWorkPlacesInfo {
   color: #afafaf;
+  border: 1px solid #505050;
+  padding: 30px;
+  padding-top: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  transition: 0.6s;
+  margin-top: 80px;
+  margin-left: 3%;
+  max-width: 420px;
   font-family: "Bookman Old Style";
-  border: white;
-  width: 410px;
+}
+
+.cardWorkPlacesInfo:hover {
+  transform: scale(1.05);
 }
 </style>
