@@ -1,8 +1,9 @@
 FROM node:14-alpine3.10
 
+RUN npm install -g http-server
+
 WORKDIR /app
 
-EXPOSE 8080
 
 COPY package*.json ./
 
@@ -11,4 +12,8 @@ RUN npm install @vue/cli@3.7.0
 
 COPY . .
 
-CMD ["npm", "run", "start:prod"]
+RUN npm run build
+
+EXPOSE 8080
+
+CMD [ "http-server", "dist" ]
