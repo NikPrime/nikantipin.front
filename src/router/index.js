@@ -3,6 +3,7 @@ import BlogPage from "@/components/pages/BlogPage";
 import TechPage from "@/components/pages/TechPage";
 import MainPage from "@/components/pages/MainPage";
 import AlgoPage from "@/components/pages/AlgoPage";
+import AdminPanelPage from "@/components/pages/AdminPanelPage";
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/algorithms',
         component: AlgoPage,
         name: 'algo'
+    },
+    {
+        path: '/admin',
+        component: AdminPanelPage,
+        name: 'adminPanel'
     },
 ]
 
