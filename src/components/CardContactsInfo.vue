@@ -7,7 +7,7 @@
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/nikita-antipin-965116181/" target="_blank">
+        <a href="https://www.linkedin.com/in/nikita-antipin-965116181/" target="_blank" title="Don't forget to use VPN">
           <img width="170" height="35" src="../assets/linkedinButton.png" alt="Linked In">
         </a>
       </li>
