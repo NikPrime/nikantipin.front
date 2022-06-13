@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1><BlogPage</h1>
+  <h1>BlogPage</h1>
 </div>
 </template>
 
