@@ -1,31 +1,31 @@
 <template>
   <ul>
     <li>
-      <a href="https://nikantipin.site/">
+      <router-link to="/">
         <span>Главная</span>
         <span>Главная</span>
-      </a>
+      </router-link>
     </li>
     <hr>
     <li>
-      <a href="https://nikantipin.site/blog">
+      <router-link to="/blog">
         <span>Блог</span>
         <span>Блог</span>
-      </a>
+      </router-link>
     </li>
     <hr>
     <li>
-      <a href="https://nikantipin.site/tech">
+      <router-link to="/tech">
         <span>Технологии</span>
         <span>Технологии</span>
-      </a>
+      </router-link>
     </li>
     <hr>
     <li>
-      <a href="https://nikantipin.site/algorithms">
+      <router-link to="/algorithms">
         <span>Алгоритмы</span>
         <span>Алгоритмы</span>
-      </a>
+      </router-link>
     </li>
   </ul>
 </template>
