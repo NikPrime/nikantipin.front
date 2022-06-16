@@ -2,14 +2,14 @@
 <div>
   <h2>Sign Up</h2>
 
-  <form action="" method="post" class="form">
+  <form @submit="login" method="post" class="form">
 
     <div class="emailForm">
-      <input class="loginInput" type="email" placeholder="info@mailaddress.com">
+      <input class="loginInput" type="email" v-model="email" name="email" placeholder="info@mailaddress.com">
     </div>
 
     <div class="passwordForm">
-      <input class="loginInput" type="password" placeholder="••••••••••••">
+      <input class="loginInput" v-model="password" name="password" type="password" placeholder="••••••••••••">
     </div>
 
     <div class="submitButton">
@@ -21,9 +21,27 @@
 </template>
 
 <script>
+import { AdminApi } from "@/api/api.js";
+
 export default {
-  name: "AdminPanelPage"
+  name: "AdminPanelPage",
+  data() {
+    return {
+      email: null,
+      password: null,
+    }
+  },
+  methods: {
+    async login() {
+      if (this.email && this.password) {
+        const token = await AdminApi.login({email: this.email, password: this.password});
+        console.log(token)
+        return true;
+      }
+    }
+  }
 }
+
 </script>
 
 <style scoped>
