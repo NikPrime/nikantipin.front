@@ -2,9 +2,7 @@ import axios from 'axios';
 
 export class Api {
     static call = axios.create({
-        responseType: 'json',
-        //временно
-        baseURL: (process.env.BASE_URL || 'http://80.78.251.27:3000') + '/api',
+        baseURL: (process.env.BASE_API_URL || 'localhost') + '/api',
     });
 }
 

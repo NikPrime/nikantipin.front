@@ -2,8 +2,7 @@
 <div>
   <h2>Sign Up</h2>
 
-  <form @submit="login" method="post" class="form">
-
+  <form method="post" class="form">
     <div class="emailForm">
       <input class="loginInput" type="email" v-model="email" name="email" placeholder="info@mailaddress.com">
     </div>
@@ -13,7 +12,7 @@
     </div>
 
     <div class="submitButton">
-      <input class="submitInput" type="submit" value="Sign Up">
+      <input class="submitInput" @click="loginButtonPressed" type="submit" value="Sign Up">
     </div>
 
   </form>
@@ -22,21 +21,25 @@
 
 <script>
 import { AdminApi } from "@/api/api.js";
+// import axios from "axios";
 
 export default {
   name: "AdminPanelPage",
   data() {
     return {
-      email: null,
-      password: null,
+      email: '',
+      password: '',
+      info: 'startInfo'
     }
   },
   methods: {
-    async login() {
+     loginButtonPressed(event) {
       if (this.email && this.password) {
-        const token = await AdminApi.login({email: this.email, password: this.password});
-        console.log(token)
-        return true;
+        event.preventDefault();
+        AdminApi.login({ email: this.email, password: this.password }).then((res) => {
+          console.log(res);
+          this.$cookies.set('x-access-token', res.data.token);
+        });
       }
     }
   }

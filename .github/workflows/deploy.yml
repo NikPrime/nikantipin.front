@@ -43,5 +43,5 @@ jobs:
                 docker stop ${{ secrets.CONTAINER_NAME }} || true
                 docker container rm ${{ secrets.CONTAINER_NAME }} || true
                 docker image rm -f ${{ secrets.IMAGE_NAME }} || true
-                docker run -d --name frontend --publish 8080:8080 nikprime/nikantipin.front:master
+                docker run -d --name frontend --publish 8080:8080 --env BASE_API_URL=${{secrets.BASE_API_URL}} nikprime/nikantipin.front:master
             
