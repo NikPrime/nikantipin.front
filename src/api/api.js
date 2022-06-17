@@ -2,7 +2,8 @@ import axios from 'axios';
 
 export class Api {
     static call = axios.create({
-        baseURL: (process.env.BASE_API_URL || 'localhost') + '/api',
+        //temporary solution
+        baseURL: (process.env.BASE_API_URL || 'http://80.78.251.27:3000') + '/api',
     });
 }
 
