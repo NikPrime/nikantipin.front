@@ -3,7 +3,9 @@ import BlogPage from "@/components/pages/BlogPage";
 import TechPage from "@/components/pages/TechPage";
 import MainPage from "@/components/pages/MainPage";
 import AlgoPage from "@/components/pages/AlgoPage";
+import AdminLoginPage from "@/components/pages/AdminLoginPage";
 import AdminPanelPage from "@/components/pages/AdminPanelPage";
+import {store} from "@/store";
 
 const routes = [
     {
@@ -28,14 +30,34 @@ const routes = [
     },
     {
         path: '/admin',
+        component: AdminLoginPage,
+        name: 'adminLoginPage',
+    },
+    {
+        path: '/admin/panel',
         component: AdminPanelPage,
-        name: 'adminPanel'
+        name: 'AdminPanelPage',
+        meta: {
+            requiresAuth: true
+        }
     },
 ]
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes,
+})
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta?.requiresAuth)) {
+        if (store.getters.isAuth) {
+            next();
+            return;
+        }
+        next('/admin')
+    } else {
+        next()
+    }
 })
 
 export default router;
