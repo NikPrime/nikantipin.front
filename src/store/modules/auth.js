@@ -12,15 +12,18 @@ const actions = {
      LogIn({ commit }, email) {
         commit('setAdmin', email)
     },
-    async LogOut({ commit }) {
+     LogOut({ commit }) {
         let admin = null;
-        commit('logout', admin)
+        commit('logOut', admin)
     }
 };
 
 const mutations = {
     setAdmin: (state, email) => {
         state.admin = email;
+    },
+    logOut: (state) => {
+        state.admin = null;
     }
 };
 export default {
