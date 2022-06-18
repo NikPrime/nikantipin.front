@@ -5,26 +5,46 @@
       <a :href="href" @click="logOut(navigate, $event)">Log out</a>
     </router-link>
   </div>
-  <h2>ADMIN PANEL</h2>
+ <TextEditor v-model="content"/>
+  <button
+      class="submit-button"
+      @click="onSubmit">
+    Submit
+  </button>
 </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import TextEditor from "@/components/pages/TextEditor";
 
 export default {
   name: 'AdminPanelPage',
+  components: {
+    TextEditor,
+  },
+
+
+  data() {
+    return {
+      content: '',
+    }
+  },
   methods: {
     ...mapActions(['LogOut']),
     logOut(navigate, event) {
       this.LogOut();
       navigate(event);
-    }
+    },
+    onSubmit() {
+      alert(JSON.stringify(this.content));
+      console.log();
+    },
   }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 a {
   color: #ffffff;
   text-decoration: none;
