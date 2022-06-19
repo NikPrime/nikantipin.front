@@ -37,8 +37,7 @@ export default {
       if (this.email && this.password) {
         event.preventDefault();
         const t = this;
-        AdminApi.login({ email: this.email, password: this.password }).then((res) => {
-          t.$cookies.set('x-access-token', res.data.token);
+        AdminApi.login({ email: this.email, password: this.password }).then(() => {
           t.LogIn(t.email).then(() => t.$router.push('/admin/panel'));
         }, () => {
           alert('Incorrect username or password');
