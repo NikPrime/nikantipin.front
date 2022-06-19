@@ -21,7 +21,6 @@
 
 <script>
 import { AdminApi } from '@/api/api.js';
-import { mapActions } from 'vuex';
 
 export default {
   name: 'AdminLoginPage',
@@ -32,13 +31,14 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['LogIn']),
      loginButtonPressed(event) {
       if (this.email && this.password) {
         event.preventDefault();
         const t = this;
-        AdminApi.login({ email: this.email, password: this.password }).then(() => {
-          t.LogIn(t.email).then(() => t.$router.push('/admin/panel'));
+
+        AdminApi.login({ email: this.email, password: this.password }).then((res) => {
+          localStorage.setItem('x-access-token', res.data.token);
+          t.$router.push('/admin/panel');
         }, () => {
           alert('Incorrect username or password');
         });

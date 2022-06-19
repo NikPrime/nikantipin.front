@@ -5,6 +5,10 @@
       <a :href="href" @click="logOut(navigate, $event)">Log out</a>
     </router-link>
   </div>
+  <div>
+    <textarea v-model="articleHeader" placeholder="Article header"></textarea>
+    <textarea v-model="articleType" placeholder="Article type"></textarea>
+  </div>
   <ckeditor class="ckeditor" :editor="editor" v-model="editorData" :config="editorConfig" @ready="onReady"></ckeditor>
   <button
       class="submit-button"
@@ -16,8 +20,8 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import {AdminApi} from "@/api/api";
 
 export default {
   name: 'AdminPanelPage',
@@ -28,20 +32,24 @@ export default {
   data() {
     return {
       editor: DecoupledEditor,
+      articleHeader: '',
+      articleType: '',
       editorData: '<p>Rich-text editor content.</p>',
       editorConfig: {
       }
     };
   },
   methods: {
-    ...mapActions(['LogOut']),
-    logOut(navigate, event) {
-      this.LogOut();
-      navigate(event);
+    logOut() {
+     //args: navigate, event
     },
     onSubmit() {
-      alert(JSON.stringify(this.editorData));
-      console.log();
+      AdminApi.saveArticle({
+            header: this.articleHeader,
+            article: this.editorData,
+            type: this.articleType
+          }
+      )
     },
     onReady(editor) {
       // Insert the toolbar before the editable area.

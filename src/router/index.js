@@ -5,7 +5,7 @@ import MainPage from "@/components/pages/MainPage";
 import AlgoPage from "@/components/pages/AlgoPage";
 import AdminLoginPage from "@/components/pages/AdminLoginPage";
 import AdminPanelPage from "@/components/pages/AdminPanelPage";
-import {store} from "@/store";
+import { AdminApi } from '@/api/api';
 
 const routes = [
     {
@@ -50,11 +50,12 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta?.requiresAuth)) {
-        if (store.getters.isAuth) {
+        AdminApi.checkAuth().then(() => {
             next();
             return;
-        }
-        next('/admin')
+        }, () => {
+            next('/admin')
+        })
     } else {
         next()
     }
