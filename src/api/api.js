@@ -16,20 +16,24 @@ export class AdminApi {
     }
 
     static saveArticle(data) {
+        const token = localStorage.getItem('x-access-token');
+
         return Api.call('/articles', {
             data,
             method: 'POST',
             headers: {
-                "x-access-token": localStorage.getItem('x-access-token')
+                "x-access-token": token
             }
         });
     }
 
     static checkAuth() {
+        const token = localStorage.getItem('x-access-token');
+
         return Api.call('/admin/auth', {
             method: 'GET',
             headers: {
-                "x-access-token": localStorage.getItem('x-access-token')
+                "x-access-token": token
             }
         })
     }

@@ -41,7 +41,8 @@ export default {
   },
   methods: {
     logOut() {
-     //args: navigate, event
+      localStorage.removeItem('x-access-token');
+      this.$router.push('/admin/panel');
     },
     onSubmit() {
       AdminApi.saveArticle({

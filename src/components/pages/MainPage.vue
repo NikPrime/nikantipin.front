@@ -28,6 +28,9 @@ import CardEducationInfo from "../../components/CardEducationInfo";
 
 export default {
   name: 'App',
+  created () {
+    document.title = "Nik Antipin";
+  },
   components: {
     Navbar,
     CardStackInfo,
