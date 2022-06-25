@@ -35,6 +35,20 @@ export class AdminApi {
             headers: {
                 "x-access-token": token
             }
-        })
+        });
+    }
+}
+
+export class BaseApi {
+    static getArticle(id) {
+        return Api.call(`/articles/${id}`, {
+            method: 'GET',
+        });
+    }
+    static getArticles(params) {
+        return Api.call('/articles', {
+            method: 'GET',
+            params
+        });
     }
 }

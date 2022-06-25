@@ -8,6 +8,7 @@
   <div>
     <textarea v-model="articleHeader" placeholder="Article header"></textarea>
     <textarea v-model="articleType" placeholder="Article type"></textarea>
+    <textarea v-model="articleImageUrl" placeholder="Article image url"></textarea>
   </div>
   <ckeditor class="ckeditor" :editor="editor" v-model="editorData" :config="editorConfig" @ready="onReady"></ckeditor>
   <button
@@ -33,6 +34,7 @@ export default {
     return {
       editor: DecoupledEditor,
       articleHeader: '',
+      articleImageUrl: '',
       articleType: '',
       editorData: '<p>Rich-text editor content.</p>',
       editorConfig: {
@@ -46,6 +48,7 @@ export default {
     },
     onSubmit() {
       AdminApi.saveArticle({
+            imageUrl: this.articleImageUrl,
             header: this.articleHeader,
             article: this.editorData,
             type: this.articleType
