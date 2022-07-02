@@ -66,9 +66,7 @@ export default {
 ul {
   display: table;
   text-align: left;
-  table-layout: fixed;
   list-style: none;
-  width: 70%;
   font-size: 25px;
   font-family: "TT Norms Std Condensed";
 }
@@ -79,22 +77,22 @@ h1 {
 }
 .info {
   display: flex;
-  margin-left: 4%;
-  margin-right: 4%;
+  flex-wrap: wrap;
+
   margin-top: 35px;
   height: 500px;
 }
 
 .stackInfo {
-  flex: 1 1 auto;
+  flex: 1 1 30%;
 }
 
 .workInfo {
-  flex: 1 1 auto;
+  flex: 1 1 30%;
 }
 
 .educationInfo {
-  flex: 1 1 auto;
+  flex: 1 1 30%;
 }
 
 

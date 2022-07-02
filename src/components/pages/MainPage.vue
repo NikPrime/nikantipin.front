@@ -1,9 +1,7 @@
 <template>
   <Navbar/>
   <ContactsInfoBlock/>
-  <div class="cardsRow_second">
-    <GeneralInfo/>
-  </div>
+  <GeneralInfo/>
 </template>
 
 <script>
