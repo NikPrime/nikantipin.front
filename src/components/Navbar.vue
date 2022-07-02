@@ -6,21 +6,18 @@
         <span>Главная</span>
       </router-link>
     </li>
-    <hr>
     <li>
       <router-link to="/blog">
         <span>Блог</span>
         <span>Блог</span>
       </router-link>
     </li>
-    <hr>
     <li>
       <router-link to="/tech">
         <span>Технологии</span>
         <span>Технологии</span>
       </router-link>
     </li>
-    <hr>
     <li>
       <router-link to="/algorithms">
         <span>Алгоритмы</span>
@@ -37,49 +34,39 @@ export default {
 </script>
 
 <style scoped>
-hr {
-  border: 1px solid #37526e;
-}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-html {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: #262626;
+  height: 55px;
 }
 
 ul {
   display: flex;
-  margin: 0 40px;
-  width: 400px;
+  justify-content: center;
 }
 
 ul li {
   list-style: none;
   margin: 0 10px;
-  position: relative;
 }
 
 ul li a {
   display: block;
-  font-weight: 400;
-  height: 20px;
   overflow: hidden;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Bookman Old Style";
+  font-family: "TT Norms Std Condensed";
 }
 
 ul li a span {
   color: #ffffff;
   display: block;
-  height: 100%;
   transition: transform 0.3s linear;
-  width: 100%;
+  line-height: 55px;
 }
 
 ul li a span:nth-child(1) {
@@ -87,7 +74,7 @@ ul li a span:nth-child(1) {
 }
 
 ul li:hover a span:nth-child(1) {
-  transform: translateY(-100%);
+  transform: translateY(-20%);
 }
 
 ul li:hover a span:nth-child(2) {
