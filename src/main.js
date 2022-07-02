@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import MainPage from './components/pages/MainPage';
 import router from './router/index';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
@@ -15,7 +15,7 @@ library.add(fas, fab);
 
 axios.defaults.withCredentials = true;
 
-createApp(App)
+createApp(MainPage)
     .component('font-awesome-icon', FontAwesomeIcon)
     .use(router)
     .use(VueAxios, axios)

@@ -28,6 +28,7 @@ export default {
 
 <style>
 body {
+  min-width: fit-content;
   margin: 0 auto;
   background-color: #f6f6f6;
 }
@@ -45,6 +46,7 @@ h4 {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  min-width: 300px;
 }
 
 .telegramim_button.telegramim_shadow.telegramim_pulse {

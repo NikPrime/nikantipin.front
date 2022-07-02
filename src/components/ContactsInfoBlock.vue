@@ -19,10 +19,14 @@
         <img src="../assets/avatar.png" style=" max-width: 200px; max-height: 200px;">
       </div>
       <div class="greeting">
-        <p>
-          «Приветствую! Меня зовут <a class="nameURL" href="https://t.me/nikprimez">Никита Антипин</a>. Я Backend
+        <p class="greetingPC">
+          «Привет! Меня зовут <a class="nameURL" href="https://t.me/nikprimez">Никита Антипин</a>. Я Backend
           Node.js-developer, и я открыт к сотрудничеству. Здесь я веду свой блог, а также рассказываю про технологии,
           фреймворки и алгоритмы, которые люблю и использую в своей работе»
+        </p>
+        <p class="greetingMobile">
+          «Привет! Меня зовут <a class="nameURL" href="https://t.me/nikprimez">Никита Антипин</a>. Я Backend
+          Node.js-developer, это мой блог, и я открыт к сотрудничеству»
         </p>
     </div>
     </div>
@@ -38,6 +42,7 @@ export default {
 
 <style scoped>
 .cardContactsInfo {
+  width: 100%;
   height: 200px;
   padding-top: 35px;
   padding-bottom: 35px;
@@ -129,7 +134,7 @@ ul > li {
 }
 
 .greeting {
-  width: 55%;
+  width: 40%;
   display: table;
 }
 
@@ -138,9 +143,13 @@ p {
   font-style: italic;
   font-size: 20px;
   font-weight: 600;
-  padding-left: 60px;
+  padding-left: 6%;
   display: table-cell;
   vertical-align: middle;
+}
+
+.greetingMobile {
+  display: none;
 }
 
 @media (max-width: 844px) {
@@ -149,7 +158,32 @@ p {
   }
 }
 
-@media (max-width: 543px) {
+@media (max-width: 680px) {
+  p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 458px) {
+  p {
+    font-size: 18px;
+  }
+  .greetingPC {
+    display: none;
+  }
+  .greetingMobile {
+    display: table;
+  }
+}
+
+@media (max-width: 452px) {
+  a {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 376px) {
   p {
     font-size: 16px;
   }
