@@ -135,6 +135,7 @@ ul > li {
 
 .greeting {
   width: 40%;
+  margin-right: 5%;
   display: table;
 }
 
