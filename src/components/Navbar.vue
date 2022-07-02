@@ -1,30 +1,32 @@
 <template>
-  <ul>
-    <li>
-      <router-link to="/">
-        <span>Главная</span>
-        <span>Главная</span>
-      </router-link>
-    </li>
-    <li>
-      <router-link to="/blog">
-        <span>Блог</span>
-        <span>Блог</span>
-      </router-link>
-    </li>
-    <li>
-      <router-link to="/tech">
-        <span>Технологии</span>
-        <span>Технологии</span>
-      </router-link>
-    </li>
-    <li>
-      <router-link to="/algorithms">
-        <span>Алгоритмы</span>
-        <span>Алгоритмы</span>
-      </router-link>
-    </li>
-  </ul>
+  <div class="navbar">
+    <ul>
+      <li>
+        <router-link to="/">
+          <span>Главная</span>
+          <span>Главная</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/blog">
+          <span>Блог</span>
+          <span>Блог</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/tech">
+          <span>Технологии</span>
+          <span>Технологии</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/algorithms">
+          <span>Алгоритмы</span>
+          <span>Алгоритмы</span>
+        </router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -41,6 +43,16 @@ export default {
   padding: 0;
   background: #262626;
   height: 55px;
+}
+
+.navbar {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 10px
+
 }
 
 ul {

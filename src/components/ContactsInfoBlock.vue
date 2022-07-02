@@ -1,6 +1,20 @@
 <template>
   <div class="cardContactsInfo">
-    <div class="firstRow">
+    <div class="imageAndGreeting">
+      <div class="icons">
+        <a class="iconTelegramLink" href="https://t.me/nikprimez" target="_blank">
+          <font-awesome-icon class="btn" icon="fab fa-telegram"/>
+        </a>
+        <a class="iconLinkedInLink" href="https://www.linkedin.com/in/nikita-antipin-965116181/" target="_blank">
+          <font-awesome-icon class="btn" icon="fa-brands fa-linkedin"/>
+        </a>
+        <a class="iconGithubLink" href="https://www.github.com/nikprime/" target="_blank">
+          <font-awesome-icon class="btn" icon="fa-brands fa-github"/>
+        </a>
+        <a class="iconYoutubeLink" href="https://www.youtube.com/channel/UCqAEop_eavAh-bYklejj4wg/" target="_blank">
+          <font-awesome-icon class="btn" icon="fa-brands fa-youtube"/>
+        </a>
+      </div>
       <div class="image">
         <img src="../assets/avatar.png" style=" max-width: 200px; max-height: 200px;">
       </div>
@@ -10,31 +24,13 @@
           Node.js-developer, и я открыт к сотрудничеству. Здесь я веду свой блог, а также рассказываю про технологии,
           фреймворки и алгоритмы, которые люблю и использую в своей работе»
         </p>
-      </div>
-<!--        <a href="https://t.me/nikprimez" target="_blank" class="telegramim_button telegramim_shadow telegramim_pulse"-->
-<!--           title="Перейти в telegram"><i></i> @nikprimez</a>-->
     </div>
-<!--    <ul>-->
-<!--      <li>-->
-<!--        <a href="https://www.github.com/nikprime" target="_blank">-->
-<!--          <img width="170" height="35" src="../assets/githubButton.png" alt="GitHub">-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <a href="https://www.linkedin.com/in/nikita-antipin-965116181/" target="_blank" title="Don't forget to use VPN">-->
-<!--          <img width="170" height="35" src="../assets/linkedinButton.png" alt="Linked In">-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <a href="https://www.youtube.com/channel/UCqAEop_eavAh-bYklejj4wg/" target="_blank">-->
-<!--          <img width="170" height="35" src="../assets/youtubeButton.png" alt="Youtube">-->
-<!--        </a>-->
-<!--      </li>-->
-<!--    </ul>-->
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "CardContactsInfo"
 }
@@ -43,15 +39,80 @@ export default {
 <style scoped>
 .cardContactsInfo {
   height: 200px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 35px;
+  padding-bottom: 35px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF;
 }
 
-.firstRow {
+.imageAndGreeting {
   display: flex;
   justify-content: center;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+}
+
+.iconTelegramLink:hover, .iconGithubLink:hover, .iconLinkedInLink:hover, .iconYoutubeLink:hover {
+  transition: 0.3s linear;
+  transform: scale(1.2);
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.iconTelegramLink:hover {
+  color: #27A5E7;
+}
+
+.iconLinkedInLink:hover {
+  color: #068dfc;
+}
+
+.iconGithubLink:hover {
+  color: #000000;
+}
+
+.iconYoutubeLink:hover {
+  color: #ff1e1e;
+}
+
+.iconTelegramLink:active {
+  color: #27A5E7;
+  transition: 0.3s linear;
+  transform: scale(2)
+}
+
+.iconLinkedInLink:active {
+  color: #068dfc;
+  transition: 0.3s linear;
+  transform: scale(2)
+}
+
+.iconGithubLink:active {
+  color: #000000;
+  transition: 0.3s linear;
+  transform: scale(2)
+}
+
+.iconYoutubeLink:active {
+  color: #ff1e1e;
+  transition: 0.3s linear;
+  transform: scale(2)
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
 }
 
 ul {
@@ -81,6 +142,7 @@ p {
   display: table-cell;
   vertical-align: middle;
 }
+
 @media (max-width: 844px) {
   p {
     font-size: 18px;
