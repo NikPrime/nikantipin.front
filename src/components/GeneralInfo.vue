@@ -84,14 +84,17 @@ h1 {
 }
 
 .stackInfo {
+  margin-left: 3%;
   flex: 1 1 30%;
 }
 
 .workInfo {
+  margin-left: 3%;
   flex: 1 1 30%;
 }
 
 .educationInfo {
+  margin-left: 3%;
   flex: 1 1 30%;
 }
 
