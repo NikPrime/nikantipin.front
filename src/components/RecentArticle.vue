@@ -1,17 +1,17 @@
 <template>
   <a class="bannerArticle" href="https://google.com" v-if="header && imageUrl">
-    <img class="bannerImage" :src="imageUrl" alt="">
-    <div class="bannerSecondPart">
-      <div class="bannerTimeDate">{{ date }} | {{ time }}</div>
-      <div class="bannerHeader">{{ header }}</div>
-    </div>
+        <img class="bannerImage" :src="imageUrl" alt="">
+        <div class="bannerSecondPart">
+          <div class="bannerTimeDate">{{ date }} | {{ time }}</div>
+          <div class="bannerHeader">{{ header }}</div>
+        </div>
   </a>
 </template>
 
 <script>
 
 export default {
-  name: 'Article',
+  name: 'RecentArticle',
   props: ['header', 'date', 'time', 'imageUrl']
 }
 </script>
@@ -61,7 +61,7 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .bannerHeader {
-    font-size: 50%;
+   font-size: 50%;
   }
 }
 </style>

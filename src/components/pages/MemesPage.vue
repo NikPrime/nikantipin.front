@@ -1,7 +1,7 @@
 <template>
 <div>
   <Navbar/>
-  <h1>TechPage</h1>
+  <h1>Memes Page</h1>
 </div>
 </template>
 
@@ -9,7 +9,7 @@
 import Navbar from "@/components/Navbar";
 
 export default {
-  name: "TechPage",
+  name: "MemesPage",
   components: {
     Navbar,
   }

@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import BlogPage from "@/components/pages/BlogPage";
-import TechPage from "@/components/pages/TechPage";
 import MainPage from "@/components/pages/MainPage";
 import AlgoPage from "@/components/pages/AlgoPage";
+import MemesPage from "@/components/pages/MemesPage";
 import AdminLoginPage from "@/components/pages/AdminLoginPage";
 import AdminPanelPage from "@/components/pages/AdminPanelPage";
 import { AdminApi } from '@/api/api';
@@ -19,9 +19,9 @@ const routes = [
         name: 'blog'
     },
     {
-        path: '/tech',
-        component: TechPage,
-        name: 'tech'
+        path: '/memes',
+        component: MemesPage,
+        name: 'memes'
     },
     {
         path: '/algorithms',

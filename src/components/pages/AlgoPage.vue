@@ -1,7 +1,7 @@
 <template>
 <div>
   <Navbar/>
-  <h1>AlgoPage</h1>
+  <h1>Algo Page</h1>
 </div>
 </template>
 

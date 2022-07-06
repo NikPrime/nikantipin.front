@@ -1,10 +1,16 @@
 <template>
 <div>
   <Navbar/>
-  <h1>BlogPage</h1>
-  <div class="articlesList">
-    <Article v-for="(article, index) in articles" :key="index" :header="article.header" :date="article.date"
+  <div class="recentArticlesList">
+    <RecentArticle v-for="(article, index) in recentArticles" :key="index" :header="article.header" :date="article.date"
              :time="article.time" :imageUrl="article.imageUrl"/>
+  </div>
+  <div class="ArticlesList">
+    <Article v-for="(article, index) in recentArticles" :key="index" :header="article.header" :date="article.date"
+                   :time="article.time" :imageUrl="article.imageUrl"/>
+  </div>
+  <div>
+
   </div>
   <ul></ul>
 </div>
@@ -12,24 +18,28 @@
 
 <script>
 import Navbar from '@/components/Navbar';
-import Article from '@/components/Article';
-import {BaseApi} from '@/api/api';
 import moment from 'moment';
+import RecentArticle from '@/components/RecentArticle';
+import Article from "@/components/Article";
+import { BaseApi } from '@/api/api';
+
 export default {
   name: 'BlogPage',
   components: {
     Navbar,
+    RecentArticle,
     Article
   },
   data() {
     return {
+      recentArticles: [],
       articles: [],
     }
   },
   beforeMount() {
     const t = this;
-    BaseApi.getArticles({type: 'blog'}).then((res) => {
-      t.articles = res.data?.data?.articles.map(elem => {
+    BaseApi.getArticles({type: 'blog', limit: 3}).then((res) => {
+      t.recentArticles = res.data?.data?.articles.map(elem => {
         return {
           date: moment(elem.createdAt).format('DD.MM.YYYY'),
           time: moment(elem.createdAt).format('HH:mm'),
@@ -48,9 +58,16 @@ export default {
 </script>
 
 <style scoped>
-.articlesList {
+.recentArticlesList {
  display: flex;
- flex-direction: column;
  align-items: center;
+  justify-content: center;
+}
+
+.ArticlesList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>

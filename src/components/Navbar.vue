@@ -14,15 +14,15 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/tech">
-          <span>Технологии</span>
-          <span>Технологии</span>
-        </router-link>
-      </li>
-      <li>
         <router-link to="/algorithms">
           <span>Алгоритмы</span>
           <span>Алгоритмы</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/memes">
+          <span>Мемы</span>
+          <span>Мемы</span>
         </router-link>
       </li>
     </ul>
