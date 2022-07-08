@@ -43,7 +43,7 @@ export default {
 <style scoped>
 .cardContactsInfo {
   width: 100%;
-  height: 200px;
+  height: 270px;
   padding-top: 35px;
   padding-bottom: 35px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);

@@ -2,17 +2,22 @@
   <a class="bannerArticle" href="https://google.com" v-if="header && imageUrl">
     <img class="bannerImage" :src="imageUrl" alt="">
     <div class="bannerSecondPart">
-      <div class="bannerTimeDate">{{ date }} | {{ time }}</div>
+      <div class="bannerTimeDate">{{ handleData }} | {{ time }}</div>
       <div class="bannerHeader">{{ header }}</div>
     </div>
   </a>
 </template>
 
 <script>
-
+import moment from 'moment';
 export default {
   name: 'Article',
-  props: ['header', 'date', 'time', 'imageUrl']
+  props: ['header', 'date', 'time', 'imageUrl'],
+  computed: {
+    handleData() {
+      return moment(this.date, 'DD.MM.YYYY').format('DD MMMM YYYY');
+    }
+  }
 }
 </script>
 
@@ -20,22 +25,21 @@ export default {
 
 .bannerArticle {
   display: flex;
-  flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   font-family: "TT Norms Std Condensed";
-  font-size: 20px;
+  font-size: 23px;
+  width: 800px;
   text-decoration: none;
-  max-width: 300px;
-  max-height: 250px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.bannerArticle:hover {
-  transform: scale(1.03);
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
 }
 
 .bannerImage {
-
+  width: 280px;
+  height: 196px;
 }
 
 .bannerSecondPart {
@@ -51,6 +55,7 @@ export default {
   font-size: 15px;
   flex-grow: 1;
   color: #343434;
+  font-family: "TT Norms Std Condensed";
 }
 
 .bannerHeader {
