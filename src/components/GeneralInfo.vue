@@ -69,6 +69,7 @@ ul {
   list-style: none;
   font-size: 25px;
   font-family: "TT Norms Std Condensed";
+  margin-bottom: 25px;
 }
 ul > li {
 }
@@ -85,22 +86,23 @@ h1 {
 
 .stackInfo {
   margin-left: 3%;
-  flex: 1 1 30%;
+  flex: 1 1 25%;
 }
 
 .workInfo {
-  margin-left: 3%;
-  flex: 1 1 30%;
+  margin-left: 7%;
+  flex: 1 1 25%;
 }
 
 .educationInfo {
   margin-left: 3%;
-  flex: 1 1 30%;
+  flex: 1 1 25%;
 }
 
 
 .title {
-  margin-top: 0px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   font-size: 30px;
   font-family: "TT Norms Std Condensed";
   font-weight: bold;

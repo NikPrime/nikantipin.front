@@ -22,12 +22,15 @@ export default {
   display: flex;
   flex-direction: column;
   font-family: "TT Norms Std Condensed";
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   max-width: 300px;
-  max-height: 250px;
+  height: 280px;
   margin-left: 10px;
   margin-right: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 .bannerArticle:hover {

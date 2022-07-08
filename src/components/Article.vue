@@ -35,6 +35,8 @@ export default {
   text-decoration: none;
   background-color: #FFFFFF;
   margin-bottom: 30px;
+  border-radius: 7px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .bannerImage {
