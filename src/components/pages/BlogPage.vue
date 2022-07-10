@@ -16,9 +16,8 @@
                  :time="article.time" :imageUrl="article.imageUrl"/>
       </div>
     </div>
-    <VueTailwindPagination :current="currentPage" :total="total" :per-page="perPage"
-                           @page-changed="onPageClick($event)"/>
-  </div>
+    <InfiniteLoading :articles="articles" @infinite="load" />
+    </div>
 </template>
 
 <script>
@@ -27,9 +26,6 @@ import moment from 'moment';
 import RecentArticle from '@/components/RecentArticle';
 import Article from "@/components/Article";
 import { BaseApi } from '@/api/api';
-import '@ocrv/vue-tailwind-pagination/dist/style.css';
-
-import VueTailwindPagination from '@ocrv/vue-tailwind-pagination'
 
 export default {
   name: 'BlogPage',
@@ -37,24 +33,27 @@ export default {
     Navbar,
     RecentArticle,
     Article,
-    VueTailwindPagination,
   },
   data() {
     return {
-      recentArticles: [],
+      recentArticles:[],
       articles: [],
-      mainArticle: [],
-
-      currentPage: 1,
-      perPage: 7,
-      total: 10,
+      mainArticle:[],
+      page: 1,
+      limit: 5,
     }
   },
   beforeMount() {
-    this.getArticles(1, 5);
     this.getRecentArticles();
   },
   methods: {
+    load(state) {
+      console.log(state)
+      this.getArticles(this.page, this.limit);
+      ++this.page;
+      state.loaded();
+    },
+
     async getRecentArticles() {
       const t = this;
       BaseApi.getArticles({type: 'blog', limit: 3}).then((res) => {
@@ -75,28 +74,21 @@ export default {
       return BaseApi.getArticle(id);
     },
 
-    onPageClick(page) {
-      this.getArticles(page, 5);
-    },
-
     async getArticles(page, limit) {
       const t = this;
       BaseApi.getArticles({type: 'blog', page, limit}).then((res) => {
         const data = res.data?.data;
-        const meta = res.data?.meta;
 
-        t.currentPage = meta.page;
-        t.total = meta.total;
-        t.perPage = limit;
-
-        t.articles = data.articles.map(elem => {
-          return {
-            date: moment(elem.createdAt).format('DD.MM.YYYY'),
-            time: moment(elem.createdAt).format('HH:mm'),
-            header: elem.header,
-            imageUrl: elem.imageUrl,
-          }
+       data.articles.map((elem, index) => {
+         if (!(page === 1 && [0, 1, 2].includes(index)))
+         t.articles.push({
+           date: moment(elem.createdAt).format('DD.MM.YYYY'),
+           time: moment(elem.createdAt).format('HH:mm'),
+           header: elem.header,
+           imageUrl: elem.imageUrl,
+         })
         });
+        console.log('f')
       }).catch((err) => console.log(err));
     }
   }
@@ -105,20 +97,21 @@ export default {
 
 <style scoped>
 
-.recentArticles {
-
-
-}
-
 .recentArticlesList {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
+}
+
+.articles {
+  margin-top: 65px;
+}
+
+.recentArticles {
+  margin-top: 40px;
 }
 
 .ArticlesList {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
