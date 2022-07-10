@@ -4,7 +4,7 @@
     <div class="recentArticles">
       <p>Недавние статьи</p>
       <div class="recentArticlesList">
-        <RecentArticle v-for="(article, index) in recentArticles" :key="index" :header="article.header"
+        <RecentArticleBanner v-for="(article, index) in recentArticles" :key="index" :header="article.header"
                        :date="article.date"
                        :time="article.time" :imageUrl="article.imageUrl"/>
       </div>
@@ -12,7 +12,7 @@
     <div class="articles">
       <p>Все статьи</p>
       <div class="ArticlesList">
-        <Article v-for="(article, index) in articles" :key="index" :header="article.header" :date="article.date"
+        <ArticleBanner v-for="(article, index) in articles" :key="index" :header="article.header" :date="article.date"
                  :time="article.time" :imageUrl="article.imageUrl"/>
       </div>
     </div>
@@ -23,16 +23,16 @@
 <script>
 import Navbar from '@/components/Navbar';
 import moment from 'moment';
-import RecentArticle from '@/components/RecentArticle';
-import Article from "@/components/Article";
+import RecentArticleBanner from '@/components/RecentArticleBanner';
+import ArticleBanner from "@/components/ArticleBanner";
 import { BaseApi } from '@/api/api';
 
 export default {
   name: 'BlogPage',
   components: {
     Navbar,
-    RecentArticle,
-    Article,
+    RecentArticleBanner,
+    ArticleBanner,
   },
   data() {
     return {
