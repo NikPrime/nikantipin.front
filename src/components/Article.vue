@@ -1,7 +1,7 @@
 <template>
   <a class="bannerArticle" href="https://google.com">
-    <div class="bannerImage">
-      <vue-load-image>
+    <div>
+      <vue-load-image class="bannerImage">
         <template v-slot:image>
           <img :src="imageUrl"/>
         </template>
@@ -52,6 +52,11 @@ export default {
   margin-bottom: 30px;
   border-radius: 7px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.bannerArticle:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
 .bannerImage {
