@@ -6,6 +6,7 @@ import MemesPage from "@/components/pages/MemesPage";
 import AdminLoginPage from "@/components/pages/AdminLoginPage";
 import AdminPanelPage from "@/components/pages/AdminPanelPage";
 import { AdminApi } from '@/api/api';
+import Article from "@/components/Article";
 
 const routes = [
     {
@@ -40,6 +41,10 @@ const routes = [
         meta: {
             requiresAuth: true
         }
+    },
+    {
+        path: '/article/:id',
+        component: Article
     },
 ]
 
