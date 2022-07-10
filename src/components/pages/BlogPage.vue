@@ -6,14 +6,14 @@
       <div class="recentArticlesList">
         <RecentArticleBanner v-for="(article, index) in recentArticles" :key="index" :header="article.header"
                        :date="article.date"
-                       :time="article.time" :imageUrl="article.imageUrl"/>
+                       :time="article.time" :imageUrl="article.imageUrl" :shortId="article.shortId"/>
       </div>
     </div>
     <div class="articles">
       <p>Все статьи</p>
       <div class="ArticlesList">
         <ArticleBanner v-for="(article, index) in articles" :key="index" :header="article.header" :date="article.date"
-                 :time="article.time" :imageUrl="article.imageUrl"/>
+                 :time="article.time" :imageUrl="article.imageUrl" :shortId="article.shortId"/>
       </div>
     </div>
     <InfiniteLoading :articles="articles" @infinite="load" />
@@ -65,6 +65,7 @@ export default {
             time: moment(elem.createdAt).format('HH:mm'),
             header: elem.header,
             imageUrl: elem.imageUrl,
+            shortId: elem.shortId,
           }
         });
       }).catch((err) => console.log(err));
@@ -86,6 +87,7 @@ export default {
            time: moment(elem.createdAt).format('HH:mm'),
            header: elem.header,
            imageUrl: elem.imageUrl,
+           shortId: elem.shortId,
          })
         });
         console.log('f')

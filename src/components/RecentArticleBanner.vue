@@ -1,5 +1,5 @@
 <template>
-  <a class="bannerArticle" href="https://google.com" v-if="header && imageUrl">
+  <a class="bannerArticle" :href="shortId">
     <vue-load-image class="bannerImage">
       <template v-slot:image>
         <img class="bannerImage" :src="imageUrl"/>
@@ -25,7 +25,7 @@ export default {
     'vue-load-image': VueLoadImage
   },
   name: 'RecentArticleBanner',
-  props: ['header', 'date', 'time', 'imageUrl']
+  props: ['header', 'date', 'time', 'imageUrl', 'shortId'],
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <a class="bannerArticle" href="https://google.com">
+  <a class="bannerArticle" :href="shortId">
     <div>
       <vue-load-image class="bannerImage">
         <template v-slot:image>
@@ -27,7 +27,7 @@ export default {
     'vue-load-image': VueLoadImage
   },
   name: 'ArticleBanner',
-  props: ['header', 'date', 'time', 'imageUrl'],
+  props: ['header', 'date', 'time', 'imageUrl', "shortId"],
   computed: {
     handleData() {
       return moment(this.date, 'DD.MM.YYYY').format('DD MMMM YYYY');
