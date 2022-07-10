@@ -27,6 +27,7 @@
     "vue": "^3.2.36",
     "vue-axios": "^3.4.1",
     "vue-cookies": "^1.8.1",
+    "vue-load-image": "^1.1.0",
     "vue-router": "^4.0.13",
     "vuex": "^4.0.2",
     "vuex-persistedstate": "^4.1.0",

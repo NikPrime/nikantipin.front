@@ -1,6 +1,16 @@
 <template>
-  <a class="bannerArticle" href="https://google.com" v-if="header && imageUrl">
-    <img class="bannerImage" :src="imageUrl" alt="">
+  <a class="bannerArticle" href="https://google.com">
+    <div class="bannerImage">
+      <vue-load-image>
+        <template v-slot:image>
+          <img :src="imageUrl"/>
+        </template>
+        <template v-slot:preloader>
+          <img src="../assets/default_image.png" />
+        </template>
+        <template v-slot:error>Image load fails</template>
+      </vue-load-image>
+    </div>
     <div class="bannerSecondPart">
       <div class="bannerTimeDate">{{ handleData }} | {{ time }}</div>
       <div class="bannerHeader">{{ header }}</div>
@@ -10,7 +20,12 @@
 
 <script>
 import moment from 'moment';
+import VueLoadImage from 'vue-load-image';
+
 export default {
+  components: {
+    'vue-load-image': VueLoadImage
+  },
   name: 'Article',
   props: ['header', 'date', 'time', 'imageUrl'],
   computed: {
