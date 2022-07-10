@@ -1,5 +1,5 @@
 <template>
-  <a class="bannerArticle" :href="`article/${shortId}`">
+  <a class="bannerArticle" :href="`/#/article/${shortId}`">
     <div>
       <vue-load-image class="bannerImage">
         <template v-slot:image>

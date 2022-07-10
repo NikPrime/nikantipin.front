@@ -43,8 +43,9 @@ const routes = [
         }
     },
     {
-        path: '/article/:id',
-        component: Article
+        path: '/article/:shortId',
+        component: Article,
+        name: 'articleInfo',
     },
 ]
 
