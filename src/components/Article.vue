@@ -1,7 +1,14 @@
 <template>
-  <div>Article</div>
-  <div>{{ header }}</div>
-  <p v-html="article"></p>
+  <div class="articleBlock">
+    <div class="articleHeader">
+      {{ header }}
+    </div>
+    <div class="articleTextWrapper">
+      <div class="articleText">
+        <p v-html="article"></p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -28,5 +35,29 @@ export default {
 </script>
 
 <style scoped>
+.articleBlock {
+  width: 800px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  margin: 80px 25% 100px;
+}
 
+.articleHeader {
+ font-family: "TT Norms Std Condensed";
+  font-size: 50px;
+  margin-bottom: 25px;
+  padding-top: 50px;
+}
+
+.articleTextWrapper {
+
+}
+
+.articleText {
+  font-family: "TT Norms Std Condensed";
+  font-size: 22px;
+  text-align: left;
+  padding: 30px 5% 50px;
+}
 </style>
