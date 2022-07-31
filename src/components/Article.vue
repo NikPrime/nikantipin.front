@@ -3,10 +3,8 @@
     <div class="articleHeader">
       {{ header }}
     </div>
-    <div class="articleTextWrapper">
-      <div class="articleText">
-        <p v-html="article"></p>
-      </div>
+    <div class="articleText">
+      <p v-html="article"></p>
     </div>
   </div>
 </template>
@@ -40,7 +38,11 @@ export default {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF;
   border-radius: 15px;
-  margin: 80px 25% 100px;
+  margin: 100px auto;
+  font-family: "TT Norms Std Condensed";
+  font-size: 22px;
+  text-align: left;
+  padding: 30px 5% 50px;
 }
 
 .articleHeader {
@@ -50,14 +52,12 @@ export default {
   padding-top: 50px;
 }
 
-.articleTextWrapper {
 
-}
-
-.articleText {
-  font-family: "TT Norms Std Condensed";
-  font-size: 22px;
-  text-align: left;
-  padding: 30px 5% 50px;
+@media (max-width: 800px) {
+  .articleBlock {
+    width: 500px;
+    font-size: 40px;
+    font-size: 18px;
+  }
 }
 </style>
